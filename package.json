@@ -39,7 +39,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "tsup src/index.ts src/express.ts --format esm,cjs --dts",
