@@ -1,0 +1,57 @@
+{
+  "name": "prompt-injection-guard",
+  "version": "1.0.0",
+  "description": "Real-time prompt injection detection and prevention for LLM applications. Zero dependencies.",
+  "keywords": [
+    "prompt-injection",
+    "llm-security",
+    "ai-security",
+    "jailbreak",
+    "openai",
+    "langchain",
+    "guardrails"
+  ],
+  "homepage": "https://github.com/alikesk222/prompt-injection-guard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alikesk222/prompt-injection-guard.git"
+  },
+  "bugs": "https://github.com/alikesk222/prompt-injection-guard/issues",
+  "author": "Ali Kesik",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./express": {
+      "types": "./dist/express.d.ts",
+      "import": "./dist/express.js",
+      "require": "./dist/express.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/express.ts --format esm,cjs --dts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.0"
+  }
+}
